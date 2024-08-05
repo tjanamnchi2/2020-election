@@ -169,23 +169,6 @@ window.Quarto = {
 </header>
 
 
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>Running /Library/Frameworks/R.framework/Resources/bin/R CMD SHLIB foo.c
-using C compiler: ‘Apple clang version 15.0.0 (clang-1500.3.9.4)’
-using SDK: ‘MacOSX14.4.sdk’
-clang -arch x86_64 -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG   -I"/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/Rcpp/include/"  -I"/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/RcppEigen/include/"  -I"/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/RcppEigen/include/unsupported"  -I"/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/BH/include" -I"/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/StanHeaders/include/src/"  -I"/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/StanHeaders/include/"  -I"/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/RcppParallel/include/"  -I"/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/rstan/include" -DEIGEN_NO_DEBUG  -DBOOST_DISABLE_ASSERTS  -DBOOST_PENDING_INTEGER_LOG2_HPP  -DSTAN_THREADS  -DUSE_STANC3 -DSTRICT_R_HEADERS  -DBOOST_PHOENIX_NO_VARIADIC_EXPRESSION  -D_HAS_AUTO_PTR_ETC=0  -include '/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/StanHeaders/include/stan/math/prim/fun/Eigen.hpp'  -D_REENTRANT -DRCPP_PARALLEL_USE_TBB=1   -I/opt/R/x86_64/include    -fPIC  -falign-functions=64 -Wall -g -O2  -c foo.c -o foo.o
-In file included from &lt;built-in&gt;:1:
-In file included from /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/StanHeaders/include/stan/math/prim/fun/Eigen.hpp:22:
-In file included from /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/RcppEigen/include/Eigen/Dense:1:
-In file included from /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/RcppEigen/include/Eigen/Core:19:
-/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/RcppEigen/include/Eigen/src/Core/util/Macros.h:679:10: fatal error: 'cmath' file not found
-#include &lt;cmath&gt;
-         ^~~~~~~
-1 error generated.
-make: *** [foo.o] Error 1</code></pre>
-</div>
-</div>
 <p>Because I had three possible outcomes, and because there is no natural ordering among the outcomes, I ended up using a categorical model.</p>
 <p><span class="math display">\[ vote_i  \sim Categorical(\rho_{trump}, \rho_{biden}, \rho_{jorgensen}) \]</span></p>
 <p>The vote of person <span class="math inline">\(i\)</span> takes on one of three possible values: Trump (Republican), Biden (Democrat) or Jorgensen (Third Party). The probability of each outcome is given by the respective <span class="math inline">\(\rho\)</span>. And, by definition:</p>
@@ -212,23 +195,23 @@ make: *** [foo.o] Error 1</code></pre>
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<div id="oabtsfhvoz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#oabtsfhvoz table {
+<div id="vezzvhoeoq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#vezzvhoeoq table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#oabtsfhvoz thead, #oabtsfhvoz tbody, #oabtsfhvoz tfoot, #oabtsfhvoz tr, #oabtsfhvoz td, #oabtsfhvoz th {
+#vezzvhoeoq thead, #vezzvhoeoq tbody, #vezzvhoeoq tfoot, #vezzvhoeoq tr, #vezzvhoeoq td, #vezzvhoeoq th {
   border-style: none;
 }
 
-#oabtsfhvoz p {
+#vezzvhoeoq p {
   margin: 0;
   padding: 0;
 }
 
-#oabtsfhvoz .gt_table {
+#vezzvhoeoq .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -254,12 +237,12 @@ make: *** [foo.o] Error 1</code></pre>
   border-left-color: #D3D3D3;
 }
 
-#oabtsfhvoz .gt_caption {
+#vezzvhoeoq .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#oabtsfhvoz .gt_title {
+#vezzvhoeoq .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -271,7 +254,7 @@ make: *** [foo.o] Error 1</code></pre>
   border-bottom-width: 0;
 }
 
-#oabtsfhvoz .gt_subtitle {
+#vezzvhoeoq .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -283,7 +266,7 @@ make: *** [foo.o] Error 1</code></pre>
   border-top-width: 0;
 }
 
-#oabtsfhvoz .gt_heading {
+#vezzvhoeoq .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -295,13 +278,13 @@ make: *** [foo.o] Error 1</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#oabtsfhvoz .gt_bottom_border {
+#vezzvhoeoq .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#oabtsfhvoz .gt_col_headings {
+#vezzvhoeoq .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -316,7 +299,7 @@ make: *** [foo.o] Error 1</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#oabtsfhvoz .gt_col_heading {
+#vezzvhoeoq .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -336,7 +319,7 @@ make: *** [foo.o] Error 1</code></pre>
   overflow-x: hidden;
 }
 
-#oabtsfhvoz .gt_column_spanner_outer {
+#vezzvhoeoq .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -348,15 +331,15 @@ make: *** [foo.o] Error 1</code></pre>
   padding-right: 4px;
 }
 
-#oabtsfhvoz .gt_column_spanner_outer:first-child {
+#vezzvhoeoq .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#oabtsfhvoz .gt_column_spanner_outer:last-child {
+#vezzvhoeoq .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#oabtsfhvoz .gt_column_spanner {
+#vezzvhoeoq .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -368,11 +351,11 @@ make: *** [foo.o] Error 1</code></pre>
   width: 100%;
 }
 
-#oabtsfhvoz .gt_spanner_row {
+#vezzvhoeoq .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#oabtsfhvoz .gt_group_heading {
+#vezzvhoeoq .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -398,7 +381,7 @@ make: *** [foo.o] Error 1</code></pre>
   text-align: left;
 }
 
-#oabtsfhvoz .gt_empty_group_heading {
+#vezzvhoeoq .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -413,15 +396,15 @@ make: *** [foo.o] Error 1</code></pre>
   vertical-align: middle;
 }
 
-#oabtsfhvoz .gt_from_md > :first-child {
+#vezzvhoeoq .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#oabtsfhvoz .gt_from_md > :last-child {
+#vezzvhoeoq .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#oabtsfhvoz .gt_row {
+#vezzvhoeoq .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -440,7 +423,7 @@ make: *** [foo.o] Error 1</code></pre>
   overflow-x: hidden;
 }
 
-#oabtsfhvoz .gt_stub {
+#vezzvhoeoq .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -453,7 +436,7 @@ make: *** [foo.o] Error 1</code></pre>
   padding-right: 5px;
 }
 
-#oabtsfhvoz .gt_stub_row_group {
+#vezzvhoeoq .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -467,15 +450,15 @@ make: *** [foo.o] Error 1</code></pre>
   vertical-align: top;
 }
 
-#oabtsfhvoz .gt_row_group_first td {
+#vezzvhoeoq .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#oabtsfhvoz .gt_row_group_first th {
+#vezzvhoeoq .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#oabtsfhvoz .gt_summary_row {
+#vezzvhoeoq .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -485,16 +468,16 @@ make: *** [foo.o] Error 1</code></pre>
   padding-right: 5px;
 }
 
-#oabtsfhvoz .gt_first_summary_row {
+#vezzvhoeoq .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#oabtsfhvoz .gt_first_summary_row.thick {
+#vezzvhoeoq .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#oabtsfhvoz .gt_last_summary_row {
+#vezzvhoeoq .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -504,7 +487,7 @@ make: *** [foo.o] Error 1</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#oabtsfhvoz .gt_grand_summary_row {
+#vezzvhoeoq .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -514,7 +497,7 @@ make: *** [foo.o] Error 1</code></pre>
   padding-right: 5px;
 }
 
-#oabtsfhvoz .gt_first_grand_summary_row {
+#vezzvhoeoq .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -524,7 +507,7 @@ make: *** [foo.o] Error 1</code></pre>
   border-top-color: #D3D3D3;
 }
 
-#oabtsfhvoz .gt_last_grand_summary_row_top {
+#vezzvhoeoq .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -534,11 +517,11 @@ make: *** [foo.o] Error 1</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#oabtsfhvoz .gt_striped {
+#vezzvhoeoq .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#oabtsfhvoz .gt_table_body {
+#vezzvhoeoq .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -547,7 +530,7 @@ make: *** [foo.o] Error 1</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#oabtsfhvoz .gt_footnotes {
+#vezzvhoeoq .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -561,7 +544,7 @@ make: *** [foo.o] Error 1</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#oabtsfhvoz .gt_footnote {
+#vezzvhoeoq .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -570,7 +553,7 @@ make: *** [foo.o] Error 1</code></pre>
   padding-right: 5px;
 }
 
-#oabtsfhvoz .gt_sourcenotes {
+#vezzvhoeoq .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -584,7 +567,7 @@ make: *** [foo.o] Error 1</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#oabtsfhvoz .gt_sourcenote {
+#vezzvhoeoq .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -592,72 +575,72 @@ make: *** [foo.o] Error 1</code></pre>
   padding-right: 5px;
 }
 
-#oabtsfhvoz .gt_left {
+#vezzvhoeoq .gt_left {
   text-align: left;
 }
 
-#oabtsfhvoz .gt_center {
+#vezzvhoeoq .gt_center {
   text-align: center;
 }
 
-#oabtsfhvoz .gt_right {
+#vezzvhoeoq .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#oabtsfhvoz .gt_font_normal {
+#vezzvhoeoq .gt_font_normal {
   font-weight: normal;
 }
 
-#oabtsfhvoz .gt_font_bold {
+#vezzvhoeoq .gt_font_bold {
   font-weight: bold;
 }
 
-#oabtsfhvoz .gt_font_italic {
+#vezzvhoeoq .gt_font_italic {
   font-style: italic;
 }
 
-#oabtsfhvoz .gt_super {
+#vezzvhoeoq .gt_super {
   font-size: 65%;
 }
 
-#oabtsfhvoz .gt_footnote_marks {
+#vezzvhoeoq .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#oabtsfhvoz .gt_asterisk {
+#vezzvhoeoq .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#oabtsfhvoz .gt_indent_1 {
+#vezzvhoeoq .gt_indent_1 {
   text-indent: 5px;
 }
 
-#oabtsfhvoz .gt_indent_2 {
+#vezzvhoeoq .gt_indent_2 {
   text-indent: 10px;
 }
 
-#oabtsfhvoz .gt_indent_3 {
+#vezzvhoeoq .gt_indent_3 {
   text-indent: 15px;
 }
 
-#oabtsfhvoz .gt_indent_4 {
+#vezzvhoeoq .gt_indent_4 {
   text-indent: 20px;
 }
 
-#oabtsfhvoz .gt_indent_5 {
+#vezzvhoeoq .gt_indent_5 {
   text-indent: 25px;
 }
 
-#oabtsfhvoz .katex-display {
+#vezzvhoeoq .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#oabtsfhvoz div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#vezzvhoeoq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -819,7 +802,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/tjanamnchi2\.github\.io\/2020-election\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
