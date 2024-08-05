@@ -1,0 +1,80 @@
+---
+title: "Election Results"
+execute: 
+  echo: FALSE
+---
+
+```{r}
+#| label: setup
+#| message: FALSE
+#| warning: FALSE
+
+library(tidyverse)
+library(gtsummary)
+library(brms)
+library(tidybayes)
+library(primer.data)
+```
+
+```{r}
+#| label: cleaning
+
+# Cleaning out the data
+
+x <- nes |> 
+  filter(year == 2020) |> 
+  select(pres_vote, region) |> 
+  mutate(pres_vote = case_when(
+    pres_vote == "Democrat" ~ "Biden",
+    pres_vote == "Republican" ~ "Trump",
+    pres_vote == "Third Party" ~ "Jorgensen"
+  )) |>
+  drop_na()
+
+```
+
+Voters in the 2020 United States Presidential Election seemed to show different beliefs based on the region they were from. I used data from the `nes` dataset from the `primer.data` R package, which has data that aims to provide insights into voter behavior, current as of September 2022. Using data from the American National Election Studies (ANES), we seek to predict the relationship between voting behavior and region during the 2020 United States Presidential Election. I modeled region, a factor variable as a binomial logistic regression model. Individuals across the United States seemed to favor Joe Biden altogether despite their region.
+
+```{r}
+#| label: model
+#| warning: FALSE
+#| cache: TRUE
+
+# Running brm() to make the model
+
+fit_elec_2020 <- brm(formula = pres_vote ~ region,
+                data = x,
+                family = categorical(),
+                silent = 2,
+                refresh = 0,
+                seed = 9)
+```
+
+
+```{r}
+#| warning: FALSE
+#| label: plot
+ 
+
+# Making my ndata tibble
+region <- c("Midwest", "Northeast", "South", "West")
+
+ndata <- expand_grid(region)
+
+# Code for the plot
+fit_elec_2020 |>
+  add_epred_draws(newdata = ndata) |>
+  select(region, .category, .epred) |>
+  ggplot(aes(x = .epred, y = .category)) +
+    stat_slab(aes(fill = region),
+              alpha = 0.5) +
+  labs(title = "Election Results by Region (2020)",
+       subtitle = "Biden seems to win over every region.",
+       fill = "Region",
+       y = "Candidate",
+       x = "Probability") +
+  scale_x_continuous(labels = scales::percent) + 
+  theme_minimal()
+```
+
+
