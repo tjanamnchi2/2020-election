@@ -171,20 +171,7 @@ window.Quarto = {
 
 <p>Because I had three possible outcomes, and because there is no natural ordering among the outcomes, I ended up using a categorical model.</p>
 <p><span class="math display">\[ vote_i  \sim Categorical(\rho_{trump}, \rho_{biden}, \rho_{jorgensen}) \]</span></p>
-<p>The vote of person <span class="math inline">\(i\)</span> takes on one of three possible values: Trump (Republican), Biden (Democrat) or Jorgensen (Third Party). The probability of each outcome is given by the respective <span class="math inline">\(\rho\)</span>. And, by definition:</p>
-<p><span class="math display">\[ \rho_{trump} + \rho_{biden} + \rho_{jorgensen} = 1 \]</span> Since a categorical model is just a bernoulli model with more parameters, we can use the logit link function from the Bernoulli model.</p>
-<p><span class="math display">\[
-\rho = \frac{e^{\beta_0}}{1 + e^{\beta_0}}
-\]</span></p>
-<p>Then I expanded the equation to have 3 separate <span class="math inline">\(\rho\)</span>s (one for each candidate) and added more <span class="math inline">\(\beta\)</span>s, one for each value of <code>region</code>, which we are trying to measure.</p>
-<p><span class="math display">\[
-\begin{aligned}
-\rho_{biden}  &amp;=&amp; 1 - \rho_{trump} - \rho_{jorgensen}\\
-\rho_{trump} &amp;=&amp; \frac{e^{\beta_{0} - \beta_{1} northeast + \beta_{2} south - \beta_{3} west}}{1 + e^{\beta_{0} - \beta_{1} northeast + \beta_{2} south - \beta_{3} west}}\\
-\rho_{jorgensen} &amp;=&amp; \frac{e^{\beta_{0} - \beta_{1} northeast + \beta_{2} south - \beta_{3} west}}{1 + e^{\beta_{0} - \beta_{1} northeast + \beta_{2} south - \beta_{3} west}}\\
-\end{aligned}
-\]</span></p>
-<p>Now we can substitute the <span class="math inline">\(\beta_{}\)</span> values for the values found in the regression table at the bottom of the page and we get our final equation.</p>
+<p>Here is the mathematical equation I used.</p>
 <p><span class="math display">\[
 \begin{aligned}
 \rho_{biden}  &amp;=&amp; 1 - \rho_{trump} - \rho_{jorgensen}\\
@@ -195,23 +182,23 @@ window.Quarto = {
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<div id="vezzvhoeoq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#vezzvhoeoq table {
+<div id="znzedsmtpw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#znzedsmtpw table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#vezzvhoeoq thead, #vezzvhoeoq tbody, #vezzvhoeoq tfoot, #vezzvhoeoq tr, #vezzvhoeoq td, #vezzvhoeoq th {
+#znzedsmtpw thead, #znzedsmtpw tbody, #znzedsmtpw tfoot, #znzedsmtpw tr, #znzedsmtpw td, #znzedsmtpw th {
   border-style: none;
 }
 
-#vezzvhoeoq p {
+#znzedsmtpw p {
   margin: 0;
   padding: 0;
 }
 
-#vezzvhoeoq .gt_table {
+#znzedsmtpw .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -237,12 +224,12 @@ window.Quarto = {
   border-left-color: #D3D3D3;
 }
 
-#vezzvhoeoq .gt_caption {
+#znzedsmtpw .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#vezzvhoeoq .gt_title {
+#znzedsmtpw .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -254,7 +241,7 @@ window.Quarto = {
   border-bottom-width: 0;
 }
 
-#vezzvhoeoq .gt_subtitle {
+#znzedsmtpw .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -266,7 +253,7 @@ window.Quarto = {
   border-top-width: 0;
 }
 
-#vezzvhoeoq .gt_heading {
+#znzedsmtpw .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -278,13 +265,13 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#vezzvhoeoq .gt_bottom_border {
+#znzedsmtpw .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#vezzvhoeoq .gt_col_headings {
+#znzedsmtpw .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -299,7 +286,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#vezzvhoeoq .gt_col_heading {
+#znzedsmtpw .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -319,7 +306,7 @@ window.Quarto = {
   overflow-x: hidden;
 }
 
-#vezzvhoeoq .gt_column_spanner_outer {
+#znzedsmtpw .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -331,15 +318,15 @@ window.Quarto = {
   padding-right: 4px;
 }
 
-#vezzvhoeoq .gt_column_spanner_outer:first-child {
+#znzedsmtpw .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#vezzvhoeoq .gt_column_spanner_outer:last-child {
+#znzedsmtpw .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#vezzvhoeoq .gt_column_spanner {
+#znzedsmtpw .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -351,11 +338,11 @@ window.Quarto = {
   width: 100%;
 }
 
-#vezzvhoeoq .gt_spanner_row {
+#znzedsmtpw .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#vezzvhoeoq .gt_group_heading {
+#znzedsmtpw .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -381,7 +368,7 @@ window.Quarto = {
   text-align: left;
 }
 
-#vezzvhoeoq .gt_empty_group_heading {
+#znzedsmtpw .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -396,15 +383,15 @@ window.Quarto = {
   vertical-align: middle;
 }
 
-#vezzvhoeoq .gt_from_md > :first-child {
+#znzedsmtpw .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#vezzvhoeoq .gt_from_md > :last-child {
+#znzedsmtpw .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#vezzvhoeoq .gt_row {
+#znzedsmtpw .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -423,7 +410,7 @@ window.Quarto = {
   overflow-x: hidden;
 }
 
-#vezzvhoeoq .gt_stub {
+#znzedsmtpw .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -436,7 +423,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#vezzvhoeoq .gt_stub_row_group {
+#znzedsmtpw .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -450,15 +437,15 @@ window.Quarto = {
   vertical-align: top;
 }
 
-#vezzvhoeoq .gt_row_group_first td {
+#znzedsmtpw .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#vezzvhoeoq .gt_row_group_first th {
+#znzedsmtpw .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#vezzvhoeoq .gt_summary_row {
+#znzedsmtpw .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -468,16 +455,16 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#vezzvhoeoq .gt_first_summary_row {
+#znzedsmtpw .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#vezzvhoeoq .gt_first_summary_row.thick {
+#znzedsmtpw .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#vezzvhoeoq .gt_last_summary_row {
+#znzedsmtpw .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -487,7 +474,7 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#vezzvhoeoq .gt_grand_summary_row {
+#znzedsmtpw .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -497,7 +484,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#vezzvhoeoq .gt_first_grand_summary_row {
+#znzedsmtpw .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -507,7 +494,7 @@ window.Quarto = {
   border-top-color: #D3D3D3;
 }
 
-#vezzvhoeoq .gt_last_grand_summary_row_top {
+#znzedsmtpw .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -517,11 +504,11 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#vezzvhoeoq .gt_striped {
+#znzedsmtpw .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#vezzvhoeoq .gt_table_body {
+#znzedsmtpw .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -530,7 +517,7 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#vezzvhoeoq .gt_footnotes {
+#znzedsmtpw .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -544,7 +531,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#vezzvhoeoq .gt_footnote {
+#znzedsmtpw .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -553,7 +540,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#vezzvhoeoq .gt_sourcenotes {
+#znzedsmtpw .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -567,7 +554,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#vezzvhoeoq .gt_sourcenote {
+#znzedsmtpw .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -575,72 +562,72 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#vezzvhoeoq .gt_left {
+#znzedsmtpw .gt_left {
   text-align: left;
 }
 
-#vezzvhoeoq .gt_center {
+#znzedsmtpw .gt_center {
   text-align: center;
 }
 
-#vezzvhoeoq .gt_right {
+#znzedsmtpw .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#vezzvhoeoq .gt_font_normal {
+#znzedsmtpw .gt_font_normal {
   font-weight: normal;
 }
 
-#vezzvhoeoq .gt_font_bold {
+#znzedsmtpw .gt_font_bold {
   font-weight: bold;
 }
 
-#vezzvhoeoq .gt_font_italic {
+#znzedsmtpw .gt_font_italic {
   font-style: italic;
 }
 
-#vezzvhoeoq .gt_super {
+#znzedsmtpw .gt_super {
   font-size: 65%;
 }
 
-#vezzvhoeoq .gt_footnote_marks {
+#znzedsmtpw .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#vezzvhoeoq .gt_asterisk {
+#znzedsmtpw .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#vezzvhoeoq .gt_indent_1 {
+#znzedsmtpw .gt_indent_1 {
   text-indent: 5px;
 }
 
-#vezzvhoeoq .gt_indent_2 {
+#znzedsmtpw .gt_indent_2 {
   text-indent: 10px;
 }
 
-#vezzvhoeoq .gt_indent_3 {
+#znzedsmtpw .gt_indent_3 {
   text-indent: 15px;
 }
 
-#vezzvhoeoq .gt_indent_4 {
+#znzedsmtpw .gt_indent_4 {
   text-indent: 20px;
 }
 
-#vezzvhoeoq .gt_indent_5 {
+#znzedsmtpw .gt_indent_5 {
   text-indent: 25px;
 }
 
-#vezzvhoeoq .katex-display {
+#znzedsmtpw .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#vezzvhoeoq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#znzedsmtpw div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -717,6 +704,8 @@ window.Quarto = {
 </div>
 </div>
 <p>The intercept is the overall value that we predict, when we look at the specific regions (muJorgensen_regionSouth), the <span class="math inline">\(\beta_{}\)</span> value for that is how much it deviates from the intercept. Since the intercept of muTrump is -0.22, we expect the value for Trump in the south to be -0.7, since we add 0.15.</p>
+<p>The 95% confidence interval shows the range of values that we are 95% confident are true. The left value is the 2.5 percentile and the right value is the 97.5 percentile. If we were to present these findings to someone, we’d say:</p>
+<p>We predict the value of <span class="math inline">\(\beta_{}\)</span> to be -0.22 and we are 95% certain that it lies between -0.32 and -0.12</p>
 
 
 
