@@ -9,7 +9,7 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Election Results",
+    "title": "2020 Election by region",
     "section": "",
     "text": "Voters in the 2020 United States Presidential Election seemed to show different beliefs based on the region they were from. I used data from the nes dataset from the primer.data R package, which has data that aims to provide insights into voter behavior, current as of September 2022. Using data from the American National Election Studies (ANES), we seek to predict the relationship between voting behavior and region during the 2020 United States Presidential Election. I modeled region, a factor variable as a logistic regression model of candidate. Individuals across the United States seemed to favor Joe Biden altogether despite their region."
   },
