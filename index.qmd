@@ -1,5 +1,5 @@
 ---
-title: "Election Results"
+title: ""
 execute: 
   echo: FALSE
 ---
@@ -16,8 +16,6 @@ library(tidybayes)
 library(primer.data)
 fit_elec_2020 <- read_rds("fit_elec_2020.rds")
 ```
-
-Voters in the 2020 United States Presidential Election seemed to show different beliefs based on the region they were from. I used data from the `nes` dataset from the `primer.data` R package, which has data that aims to provide insights into voter behavior, current as of September 2022. Using data from the American National Election Studies (ANES), we seek to predict the relationship between voting behavior and region during the 2020 United States Presidential Election. I modeled region, a factor variable as a binomial logistic regression model. Individuals across the United States seemed to favor Joe Biden altogether despite their region.
 
 
 ```{r}
@@ -36,7 +34,8 @@ fit_elec_2020 |>
   select(region, .category, .epred) |>
   ggplot(aes(x = .epred, y = .category)) +
     stat_slab(aes(fill = region),
-              alpha = 0.5) +
+              alpha = 0.5,
+              position = "dodge") +
   labs(title = "Election Results by Region (2020)",
        subtitle = "Biden seems to win over every region.",
        fill = "Region",
@@ -45,5 +44,7 @@ fit_elec_2020 |>
   scale_x_continuous(labels = scales::percent) + 
   theme_minimal()
 ```
+
+Did voters in the 2020 United States Presidential Election display different beliefs based on their geographical region? Using data from the American National Election Studies (ANES), I seek to predict the relationship between voting behavior and geographical region during the 2020 United States Presidential Election. I modeled region, a factor variable as a logistic regression model of candidate. Individuals across the United States seemed to favor Joe Biden altogether despite their region. Given that a voter is from the South, there is a 51% chance that they will vote for Biden, although that number could be anywhere from 47% to 55%.
 
 

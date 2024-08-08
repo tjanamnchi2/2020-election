@@ -61,8 +61,4 @@ Now we can look at our regression table, which shows our expected values.
 tbl_regression(fit_elec_2020)
 ```
 
-The intercept is the overall value that we predict, when we look at the specific regions (muJorgensen_regionSouth), the $\beta_{}$ value for that is how much it deviates from the intercept. Since the intercept of muTrump is -0.22, we expect the value for Trump in the south to be -0.7, since we add 0.15.
-
-The 95% confidence interval shows the range of values that we are 95% confident are true. The left value is the 2.5 percentile and the right value is the 97.5 percentile. If we were to present these findings to someone, we'd say:
-
-We predict the value of $\beta_{}$ to be -0.22 and we are 95% certain that it lies between -0.32 and -0.12
+If we want to calculate the posterior probability, we substitute these values into the equation above.

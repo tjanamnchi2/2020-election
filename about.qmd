@@ -2,8 +2,8 @@
 title: "About"
 ---
 
-My name is Tanay Janmanchi and I will be a highschool junior in the fall of 2024, here is my [github](https://github.com/tjanamnchi2) and my [email](janmanchit@gmail.com).  
+My name is Tanay Janmanchi and I will be a highschool junior in the fall of 2024, here is my [GitHub account](https://github.com/tjanamnchi2) and my email: janmanchit@gmail.com.  
 
-This project seeks to predict whether someone will vote for either Trump or Biden based on their geographical location, here is a link to the [repository](https://github.com/tjanamnchi2/2020-election) on Github.
+This project seeks to predict whether someone will vote for either Trump, Biden or Jorgensen based on their geographical location, here is a link to the [repository](https://github.com/tjanamnchi2/2020-election) on GitHub.
 
 This project was created as a part of [Kane’s Data Science Bootcamp](https://bootcamp.davidkane.info).
